@@ -72,7 +72,7 @@ impl FromStr for ProductRange {
 }
 
 fn is_repeated_digits_type1(s: &str) -> bool {
-    if s.len() % 2 != 0 {
+    if s.len().is_multiple_of(2) {
         return false;
     }
 
