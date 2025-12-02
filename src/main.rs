@@ -1,6 +1,7 @@
 use clap::{Parser, Subcommand};
 
 mod day01;
+mod day02;
 
 #[derive(Parser)]
 #[command(name = "advent")]
@@ -34,6 +35,7 @@ fn main() -> eyre::Result<()> {
 
             match day_formatted.as_str() {
                 "01" => day01::run(input),
+                "02" => day02::run(input),
                 _ => {
                     eyre::bail!("Day {day_formatted} not implemented");
                 }
