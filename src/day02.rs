@@ -72,7 +72,7 @@ impl FromStr for ProductRange {
 }
 
 fn is_repeated_digits_type1(s: &str) -> bool {
-    if s.len().is_multiple_of(2) {
+    if !s.len().is_multiple_of(2) {
         return false;
     }
 
@@ -128,6 +128,8 @@ mod tests {
 
     #[test]
     fn test_find_invalid_ids_type1() {
+        println!("TEST_INPUT: {}", TEST_INPUT);
+
         let product_ranges = TEST_INPUT
             .split(',')
             .map(|s| s.parse::<ProductRange>().unwrap())
