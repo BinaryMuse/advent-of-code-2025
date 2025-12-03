@@ -3,7 +3,7 @@ use clap::{Parser, Subcommand};
 #[macro_use]
 mod impl_days;
 
-impl_days!("01", "02");
+impl_days!("01", "02", "03");
 
 #[derive(Parser)]
 #[command(name = "advent")]
