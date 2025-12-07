@@ -374,6 +374,16 @@ impl<T> Grid<T> {
             .iter()
             .filter_map(move |dir| self.coord_in_dir(coord, *dir, 1))
     }
+
+    pub fn print(&self, print_cell: impl Fn(Option<&T>) -> &str) {
+        for row in 0..self.height {
+            for col in 0..self.width {
+                let cell = self.get((row, col));
+                print!("{}", print_cell(cell));
+            }
+            println!();
+        }
+    }
 }
 
 impl<T: Clone> Grid<T> {
